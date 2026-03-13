@@ -311,10 +311,8 @@
         </p>
     </footer>
 
-    <script>
-        function corrigirQuiz() {
-
-           function corrigirQuiz() {
+<script>
+function corrigirQuiz() {
 
     let respostasCorretas = {
         q3: "b",
@@ -337,65 +335,67 @@
         q20: "a"
     };
 
-};
+    let total = 20;
+    let acertos = 0;
 
-            let total = 20;
-            let acertos = 0;
-
-
-            for (let i = 1; i <= total; i++) {
-                let respostaSelecionada = document.querySelector('input[name="q' + i + '"]:checked');
-                if (!respostaSelecionada) {
-                    alert("Por favor responde a todas as perguntas antes de ver o resultado.");
-                    return;
-                }
-            }
-
-
-            let labels = document.querySelectorAll(".question input");
-            labels.forEach(input => {
-                input.parentElement.style.color = "black";
-            });
-
-
-            for (let i = 1; i <= total; i++) {
-
-                let respostaSelecionada = document.querySelector('input[name="q' + i + '"]:checked');
-                let todasRespostas = document.querySelectorAll('input[name="q' + i + '"]');
-
-                todasRespostas.forEach(opcao => {
-
-                    if (opcao.value === respostasCorretas["q" + i]) {
-                        opcao.parentElement.style.color = "green";
-                    }
-
-                    if (opcao.checked && opcao.value !== respostasCorretas["q" + i]) {
-                        opcao.parentElement.style.color = "red";
-                    }
-
-                });
-
-                if (respostaSelecionada.value === respostasCorretas["q" + i]) {
-                    acertos++;
-                }
-            }
-
-            let erros = total - acertos;
-
-            document.getElementById("resultado").innerHTML =
-                "<div class='result'>Acertos: " + acertos +
-                "<br>Erros: " + erros +
-                "<br><br>Nível CyberSmart: " +
-                (acertos >= 16 ? "Excelente!" :
-                    acertos == 20 ? "muito bem, acertaste todas!" :
-                        acertos >= 10 ? "Bom conhecimento!" :
-                            "Precisas rever os conteúdos!"
-                )
-            "</div>";
+    for (let i = 1; i <= total; i++) {
+        let respostaSelecionada = document.querySelector('input[name="q' + i + '"]:checked');
+        if (!respostaSelecionada) {
+            alert("Por favor responde a todas as perguntas antes de ver o resultado.");
+            return;
         }
-    </script>
+    }
+
+    let labels = document.querySelectorAll(".question input");
+    labels.forEach(input => {
+        input.parentElement.style.color = "black";
+    });
+
+    for (let i = 1; i <= total; i++) {
+
+        let respostaSelecionada = document.querySelector('input[name="q' + i + '"]:checked');
+        let todasRespostas = document.querySelectorAll('input[name="q' + i + '"]');
+
+        todasRespostas.forEach(opcao => {
+
+            if (opcao.value === respostasCorretas["q" + i]) {
+                opcao.parentElement.style.color = "green";
+            }
+
+            if (opcao.checked && opcao.value !== respostasCorretas["q" + i]) {
+                opcao.parentElement.style.color = "red";
+            }
+
+        });
+
+        if (respostaSelecionada.value === respostasCorretas["q" + i]) {
+            acertos++;
+        }
+    }
+
+    let erros = total - acertos;
+
+    let nivel = "";
+    if (acertos === 20) {
+        nivel = "Muito bem, acertaste todas!";
+    } else if (acertos >= 16) {
+        nivel = "Excelente!";
+    } else if (acertos >= 10) {
+        nivel = "Bom conhecimento!";
+    } else {
+        nivel = "Precisas rever os conteúdos!";
+    }
+
+    document.getElementById("resultado").innerHTML =
+        "<div class='result'>Acertos: " + acertos +
+        "<br>Erros: " + erros +
+        "<br><br>Nível CyberSmart: " + nivel +
+        "</div>";
+}
+</script>
 
 
 </body>
+
 
 </html>
