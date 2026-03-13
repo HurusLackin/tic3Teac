@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberSmart</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+        }
+
+        header {
+            background: linear-gradient(90deg, #0a3d62, #1e5f8a);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        nav {
+            background-color: #163f5c;
+            text-align: center;
+            padding: 12px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .side-button {
+            position: fixed;
+            right: 0;
+            
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #1e5f8a;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px 0 0 10px;
+           
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s, transform 0.3s;
+            z-index: 1000;
+        }
+
+        .side-button:hover {
+            background-color: #163f5c;
+            transform: translateY(-50%) scale(1.05);
+        }
+
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .card:target {
+            border: 3px solid #1e5f8a;
+            background-color: #e8f1f9;
+            transform: scale(1.03);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            color: #0a3d62;
+        }
+
+        .card p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            background-color: #e8f1f9;
+            padding: 10px;
+            border-left: 4px solid #1e5f8a;
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: #0a3d62;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .logo {
+            width: 80px;
+            
+            height: auto;
+            
+            display: block;
+            margin: 0 auto 10px;
+            
+            border-radius: 10px;
+            
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+         
+            transition: transform 0.3s;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+           
+        }
+
+        .sidex {
+            position: fixed;
+            bottom: 20px;
+            
+            right: 20px;
+         
+            background-color: #e67e22;
+         
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, background 0.3s;
+            z-index: 1000;
+        }
+
+        .sidex:hover {
+            background-color: #d35400;
+           
+            transform: scale(1.05);
+           
+        }
+        .card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    margin-top: 15px;
+    border-radius: 8px;
+    display: block;
+}
+.card h2 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.card h2 a:hover {
+    text-decoration: underline;
+}
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html">
+        <img src="logo.png" alt="CyberSmart Logo" class="logo" >
+        </a>
+        <h1>CyberSmart</h1>
+        <p>Segurança Digital, Direitos e Democracia</p>
+    </header>
+
+    <nav>
+        <a href="#cidadania">Cidadania</a>
+        <a href="#privacidade">Privacidade</a>
+        <a href="#media">Media</a>
+        <a href="#direitos">Direitos Humanos</a>
+        <a href="#democracia">Democracia</a>
+        <a href="#ferramentas">Ferramentas</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfCCTuAQJqg4q1uhRNRUu2UO2mGa-C6_5J-JRL6P-Nf4lW2WQ/viewform?usp=publish-editor"
+            target="_blank" class="sidex">Avalie
+            o site</a>
+        <a href="quiz.html" class="side-button">Perguntas</a>
+
+    </nav>
+
+    <div class="container">
+        <div class="grid">
+
+            <div class="card" id="cidadania">
+                <h2><a href="https://www.dge.mec.pt/noticias/cidadania-digital-nas-escolas-divulgacao-de-iniciativas">Cidadania Digital</a></h2>
+                <p>A cidadania digital envolve responsabilidade, ética e respeito nas interações online. Plataformas
+                    como Google e Microsoft promovem programas de literacia digital para incentivar comportamentos
+                    seguros.</p>
+                <div class="highlight">
+                    Ser cidadão digital é agir online com o mesmo respeito que se espera no mundo real.
+                </div>
+                <img src="cidadaniadigital.jpg" alt="Cidadania Digital">
+            </div>
+
+            <div class="card" id="privacidade">
+                <h2><a href="https://igfej.justica.gov.pt/Sobre-o-IGFEJ/Regulamento-Geral-de-Protecao-de-Dados-RGPD">Privacidade e Proteção de Dados</a></h2>
+                <p>Empresas como Meta, Apple e Microsoft investem milhões em proteção de dados e segurança. A União
+                    Europeia criou o RGPD (Regulamento Geral de Proteção de Dados) para proteger os cidadãos.</p>
+                <div class="highlight">
+                    Nunca partilhe dados pessoais sem verificar a segurança do site.
+                </div>
+                <img src="protecao.png" alt="Imagem do tópico">
+            </div>
+
+            <div class="card" id="media">
+                <h2><a href="https://datasociety.net/wp-content/uploads/2024/04/Manipulacao-da-midia-e-desinformacao-online.pdf">Media e Desinformação</a></h2>
+                <p>A desinformação pode influenciar eleições e decisões públicas. Organizações como a União Europeia e a
+                    ONU combatem campanhas de fake news.</p>
+                <div class="highlight">
+                    Verifique sempre a fonte da notícia antes de partilhar.
+                </div>
+                <img src="mediadesinformacao.png" alt="Imagem do tópico">
+            </div>
+
+            <div class="card" id="direitos">
+                <h2><a href="https://diariodarepublica.pt/dr/legislacao-consolidada/lei/2021-164870244">Direitos Humanos no Digital</a></h2>
+                <p>A Declaração Universal dos Direitos Humanos da ONU defende dignidade e liberdade de expressão. No
+                    ambiente digital, isso inclui proteção contra cyberbullying e discurso de ódio.</p>
+                <div class="highlight">
+                    A liberdade de expressão não justifica prejudicar outras pessoas.
+                </div>
+                <img src="direitos_humanos.png" alt="Imagem do tópico">
+            </div>
+
+            <div class="card" id="democracia">
+                <h2><a href="https://www.portugal.gov.pt/pt/gc21/portugal/democracia">Democracia e Instituições Políticas</a></h2>
+                <p>A segurança digital protege sistemas eleitorais e instituições políticas. Ataques informáticos a
+                    governos já ocorreram em vários países, mostrando a importância da cibersegurança.</p>
+                <div class="highlight">
+                    Sem segurança digital, a democracia pode ser manipulada.
+                </div>
+                <img src="democracia.png" alt="Imagem do tópico">
+            </div>
+
+            <div class="card" id="ferramentas">
+                <h2><a href="https://pplware.sapo.pt/internet/seguranca/ciberseguranca-do-futuro-e-ferramentas-avancadas/">Ferramentas de Proteção</a></h2>
+                <p>Softwares como Windows Defender, Avast e firewalls empresariais ajudam a prevenir ataques. O controlo
+                    parental também protege menores de conteúdos inadequados.</p>
+                <div class="highlight">
+                    Atualizações regulares são essenciais para manter a segurança.
+                </div>
+                <img src="protecao.png" alt="Imagem do tópico">
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Todos os direitos reservados | Sávio Monteiro - Aluno nº 8214 | Turma 3TEAC</p>
+        <p>
+            <a href="https://escolaeuropeia.com/" target="_blank" style="color: #ffee00; text-decoration: none;">Escola
+                Europeia do
+                Ensino Profissional de Braga</a>
+
+        </p>
+    </footer>
+
+</body>
+
+</html>

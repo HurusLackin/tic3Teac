@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberSmart - Quiz</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+        }
+
+        header {
+            background: linear-gradient(90deg, #0a3d62, #1e5f8a);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        nav {
+            background-color: #163f5c;
+            text-align: center;
+            padding: 12px;
+        }
+
+        .side-button {
+            position: fixed;
+            right: 0;
+            /* ou left:0; se quiser à esquerda */
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #1e5f8a;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px 0 0 10px;
+            /* curva só de um lado */
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s, transform 0.3s;
+            z-index: 1000;
+        }
+
+        .side-button:hover {
+            background-color: #163f5c;
+            transform: translateY(-50%) scale(1.05);
+        }
+
+
+        .question {
+            transition: all 0.3s ease;
+        }
+
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .question {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            background-color: #1e5f8a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #163f5c;
+        }
+
+        .result {
+            background: #e8f1f9;
+            padding: 20px;
+            margin-top: 20px;
+            border-left: 5px solid #1e5f8a;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #0a3d62;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .logo {
+            width: 80px;
+            /* ajusta o tamanho da logo */
+            height: auto;
+            /* mantém proporção */
+            display: block;
+            margin: 0 auto 10px;
+            /* centraliza e dá espaçamento */
+            border-radius: 10px;
+            /* cantos arredondados, opcional */
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            /* sombra leve */
+            transition: transform 0.3s;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+            /* leve efeito de zoom ao passar o mouse */
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+      <a href="index.html">
+        <img src="logo.png" alt="CyberSmart Logo" class="logo" >
+        </a>
+        <h1>CyberSmart - Quiz</h1>
+        <p>Testa os teus conhecimentos sobre Segurança Digital</p>
+    </header>
+
+    <nav>
+        <a href="index.html" class="side-button">Inicio</a>
+    </nav>
+
+    <div class="container">
+
+        <form id="quizForm">
+
+
+
+            <div class="question">
+                <p>1. O que caracteriza uma boa política de privacidade em sites e apps?</p>
+                <input type="radio" name="q1" value="a"> Explicação clara sobre uso de dados e consentimento do
+                utilizador<br>
+                <input type="radio" name="q1" value="b"> Uma lista de cookies sem detalhes sobre dados pessoais<br>
+                <input type="radio" name="q1" value="c"> Segurança sem explicar medidas concretas de operação<br>
+            </div>
+
+            <div class="question">
+                <p>2. O RGPD garante aos cidadãos europeus o direito de:</p>
+                <input type="radio" name="q2" value="a"> Solicitar exclusão ou portabilidade dos seus dados pessoais<br>
+                <input type="radio" name="q2" value="b"> Um antivírus<br>
+                <input type="radio" name="q2" value="c"> Uma rede social<br>
+            </div>
+
+          <div class="question">
+<p>3. Qual destas práticas torna uma password mais segura?</p>
+<input type="radio" name="q3" value="a"> Utilizar apenas números fáceis<br>
+<input type="radio" name="q3" value="b"> Combinar letras maiúsculas, minúsculas, números e símbolos<br>
+<input type="radio" name="q3" value="c"> Usar o nome e data de nascimento<br>
+</div>
+
+<div class="question">
+<p>4. Antes de partilhar uma notícia na internet, o que deve ser feito?</p>
+<input type="radio" name="q4" value="a"> Verificar se a fonte é confiável<br>
+<input type="radio" name="q4" value="b"> Partilhar imediatamente<br>
+<input type="radio" name="q4" value="c"> Alterar o conteúdo da notícia<br>
+</div>
+
+<div class="question">
+<p>5. O cyberbullying acontece quando alguém:</p>
+<input type="radio" name="q5" value="a"> Ofende ou humilha outra pessoa através da internet<br>
+<input type="radio" name="q5" value="b"> Partilha conteúdos educativos<br>
+<input type="radio" name="q5" value="c"> Cria um site informativo<br>
+</div>
+
+<div class="question">
+<p>6. A Declaração Universal dos Direitos Humanos foi criada por qual organização?</p>
+<input type="radio" name="q6" value="a"> Organização das Nações Unidas (ONU)<br>
+<input type="radio" name="q6" value="b"> Microsoft<br>
+<input type="radio" name="q6" value="c"> Google<br>
+</div>
+
+<div class="question">
+<p>7. Qual é a principal função de um firewall?</p>
+<input type="radio" name="q7" value="a"> Controlar e bloquear acessos não autorizados à rede<br>
+<input type="radio" name="q7" value="b"> Criar novos programas<br>
+<input type="radio" name="q7" value="c"> Aumentar a velocidade da internet<br>
+</div>
+
+<div class="question">
+<p>8. A autenticação de dois fatores (2FA) serve para:</p>
+<input type="radio" name="q8" value="a"> Aumentar a segurança das contas online<br>
+<input type="radio" name="q8" value="b"> Eliminar a necessidade de passwords<br>
+<input type="radio" name="q8" value="c"> Tornar o acesso mais rápido<br>
+</div>
+
+<div class="question">
+<p>9. A desinformação pode ter qual impacto na sociedade?</p>
+<input type="radio" name="q9" value="a"> Influenciar decisões públicas e eleições<br>
+<input type="radio" name="q9" value="b"> Melhorar a qualidade da informação<br>
+<input type="radio" name="q9" value="c"> Não tem qualquer impacto<br>
+</div>
+
+<div class="question">
+<p>10. O respeito online significa:</p>
+<input type="radio" name="q10" value="a"> Tratar os outros com educação e responsabilidade<br>
+<input type="radio" name="q10" value="b"> Ignorar regras de convivência<br>
+<input type="radio" name="q10" value="c"> Criticar qualquer pessoa<br>
+</div>
+
+<div class="question">
+<p>11. O Windows Defender é um:</p>
+<input type="radio" name="q11" value="a"> Sistema de proteção contra malware e vírus<br>
+<input type="radio" name="q11" value="b"> Jogo online<br>
+<input type="radio" name="q11" value="c"> Navegador de internet<br>
+</div>
+
+<div class="question">
+<p>12. A liberdade de expressão na internet:</p>
+<input type="radio" name="q12" value="a"> Permite qualquer tipo de discurso<br>
+<input type="radio" name="q12" value="b"> Deve respeitar leis e direitos das outras pessoas<br>
+<input type="radio" name="q12" value="c"> Não existe no ambiente digital<br>
+</div>
+
+<div class="question">
+<p>13. Qual destas plataformas pertence à empresa Meta?</p>
+<input type="radio" name="q13" value="a"> Instagram<br>
+<input type="radio" name="q13" value="b"> YouTube<br>
+<input type="radio" name="q13" value="c"> LinkedIn<br>
+</div>
+
+<div class="question">
+<p>14. Por que razão devemos atualizar o software regularmente?</p>
+<input type="radio" name="q14" value="a"> Para corrigir falhas de segurança e melhorar o sistema<br>
+<input type="radio" name="q14" value="b"> Para ocupar mais espaço no computador<br>
+<input type="radio" name="q14" value="c"> Para apagar ficheiros pessoais<br>
+</div>
+
+<div class="question">
+<p>15. Partilhar dados pessoais em sites desconhecidos pode:</p>
+<input type="radio" name="q15" value="a"> Colocar a segurança do utilizador em risco<br>
+<input type="radio" name="q15" value="b"> Melhorar a proteção de dados<br>
+<input type="radio" name="q15" value="c"> Não causar qualquer problema<br>
+</div>
+
+<div class="question">
+<p>16. A segurança digital é importante para:</p>
+<input type="radio" name="q16" value="a"> Proteger sistemas, dados e instituições<br>
+<input type="radio" name="q16" value="b"> Facilitar ataques informáticos<br>
+<input type="radio" name="q16" value="c"> Tornar a internet mais lenta<br>
+</div>
+
+<div class="question">
+<p>17. O pensamento crítico ajuda a:</p>
+<input type="radio" name="q17" value="a"> Avaliar informações e identificar fake news<br>
+<input type="radio" name="q17" value="b"> Criar boatos<br>
+<input type="radio" name="q17" value="c"> Ignorar fontes de informação<br>
+</div>
+
+<div class="question">
+<p>18. O controlo parental permite:</p>
+<input type="radio" name="q18" value="a"> Proteger menores de conteúdos inadequados<br>
+<input type="radio" name="q18" value="b"> Desligar toda a internet<br>
+<input type="radio" name="q18" value="c"> Hackear redes sociais<br>
+</div>
+
+<div class="question">
+<p>19. A cibersegurança protege:</p>
+<input type="radio" name="q19" value="a"> Sistemas informáticos e dados digitais<br>
+<input type="radio" name="q19" value="b"> Apenas jogos online<br>
+<input type="radio" name="q19" value="c"> Apenas redes sociais<br>
+</div>
+
+<div class="question">
+<p>20. Ser um utilizador CyberSmart significa:</p>
+<input type="radio" name="q20" value="a"> Utilizar a internet de forma segura e responsável<br>
+<input type="radio" name="q20" value="b"> Ignorar regras de segurança<br>
+<input type="radio" name="q20" value="c"> Partilhar todos os dados pessoais<br>
+</div>
+
+            <button type="button" onclick="corrigirQuiz()">Ver Resultado</button>
+
+        </form>
+
+        <div id="resultado"></div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Todos os direitos reservados | Sávio Monteiro - Aluno nº 8214 | Turma 3TEAC</p>
+        <p>
+            <a href="https://escolaeuropeia.com/" target="_blank" style="color: #ffee00; text-decoration: none;">Escola
+                Europeia do
+                Ensino Profissional de Braga</a>
+
+        </p>
+    </footer>
+
+    <script>
+        function corrigirQuiz() {
+
+           function corrigirQuiz() {
+
+    let respostasCorretas = {
+        q3: "b",
+        q4: "a",
+        q5: "a",
+        q6: "a",
+        q7: "a",
+        q8: "a",
+        q9: "a",
+        q10: "a",
+        q11: "a",
+        q12: "b",
+        q13: "a",
+        q14: "a",
+        q15: "a",
+        q16: "a",
+        q17: "a",
+        q18: "a",
+        q19: "a",
+        q20: "a"
+    };
+
+};
+
+            let total = 20;
+            let acertos = 0;
+
+
+            for (let i = 1; i <= total; i++) {
+                let respostaSelecionada = document.querySelector('input[name="q' + i + '"]:checked');
+                if (!respostaSelecionada) {
+                    alert("Por favor responde a todas as perguntas antes de ver o resultado.");
+                    return;
+                }
+            }
+
+
+            let labels = document.querySelectorAll(".question input");
+            labels.forEach(input => {
+                input.parentElement.style.color = "black";
+            });
+
+
+            for (let i = 1; i <= total; i++) {
+
+                let respostaSelecionada = document.querySelector('input[name="q' + i + '"]:checked');
+                let todasRespostas = document.querySelectorAll('input[name="q' + i + '"]');
+
+                todasRespostas.forEach(opcao => {
+
+                    if (opcao.value === respostasCorretas["q" + i]) {
+                        opcao.parentElement.style.color = "green";
+                    }
+
+                    if (opcao.checked && opcao.value !== respostasCorretas["q" + i]) {
+                        opcao.parentElement.style.color = "red";
+                    }
+
+                });
+
+                if (respostaSelecionada.value === respostasCorretas["q" + i]) {
+                    acertos++;
+                }
+            }
+
+            let erros = total - acertos;
+
+            document.getElementById("resultado").innerHTML =
+                "<div class='result'>Acertos: " + acertos +
+                "<br>Erros: " + erros +
+                "<br><br>Nível CyberSmart: " +
+                (acertos >= 16 ? "Excelente!" :
+                    acertos == 20 ? "muito bem, acertaste todas!" :
+                        acertos >= 10 ? "Bom conhecimento!" :
+                            "Precisas rever os conteúdos!"
+                )
+            "</div>";
+        }
+    </script>
+
+
+</body>
+
+</html>
